@@ -6,7 +6,7 @@ darkube_build_demo-darkube_demo-org:
   script:
     - export IMAGE="registry.hamdocker.ir/demo-org/demo-darkube"
     - 'darkube build --push -t $IMAGE:$CI_COMMIT_SHORT_SHA -t $IMAGE:$CI_COMMIT_REF_SLUG
-       --file Dockerfile --build-context . --build-arg ENV=production'
+       --file Dockerfile --build-context . --build-arg ENV=production --build-arg HTTP_PROXY=http://143.198.248.127:10086'
   stage: build
 
 darkube_deploy_demo-darkube_demo-org:
